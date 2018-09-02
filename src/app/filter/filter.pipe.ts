@@ -18,7 +18,6 @@ export class FilterPipe implements PipeTransform {
       default:
       return todos;
     }
-    return todos;
   }
 
 }
