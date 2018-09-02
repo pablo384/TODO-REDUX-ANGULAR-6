@@ -20,6 +20,17 @@ export function todoReducer(state = estadoInicial, action: fromTodo.Acciones) {
                     return todoEdit;
                 }
             });
+        case fromTodo.EDIT_TODO:
+            return state.map(todoEdit => {
+                if (todoEdit.id === action.id) {
+                    return {
+                        ...todoEdit,
+                        texto: action.texto
+                    };
+                } else {
+                    return todoEdit;
+                }
+            });
         default:
             return state;
     }
