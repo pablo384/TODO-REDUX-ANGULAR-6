@@ -5,6 +5,7 @@ export const TOGGLE_TODO = '[TODO] Cambiar estado todo';
 export const TOGGLE_ALL_TODO = '[TODO] Cambiar estado a todas todo';
 export const EDIT_TODO = '[TODO] Editar todo';
 export const BORRAR_TODO = '[TODO] Borrar todo';
+export const BORRAR_COMPLETADOS = '[TODO] Borrar COMPLETADOS';
 
 export class AgregarTodoAction implements Action {
     readonly type = AGREGAR_TODO;
@@ -26,12 +27,16 @@ export class BorrarTodoAction implements Action {
     readonly type = BORRAR_TODO;
     constructor(public id: number) { }
 }
+export class BorrarCompletadoTodoAction implements Action {
+    readonly type = BORRAR_COMPLETADOS;
+}
 
 export type Acciones =
     AgregarTodoAction |
     ToggleTodoAction |
     ToggleAllTodoAction |
     EditTodoAction |
-    BorrarTodoAction
+    BorrarTodoAction |
+    BorrarCompletadoTodoAction
     ;
 
